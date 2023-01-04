@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cs.css">
+    <title>Document</title>
+</head>
+<body >
+   <div class="h">
+    <p>please input a number between 0-100</p>
+    <input type="number" id="num">
+    <button onclick="guess()">Guess</button>
+    </div> 
+    <script>   
+    let count = 0; 
+    
+    let target = Math.floor(Math.random() * 101); 
+
+    function guess() {
+        let num = document.getElementById("num").value; 
+            if (num < 0 ) {
+                alert("please input a number between 0-100");
+                count++
+            }else if (num > 100) {
+                alert("please input a number between 0-100");
+                count++
+            }else if (num > target) {
+                alert("มากกว่า");
+                count++
+            }else if (num < target) {
+                alert("น้อยกว่า");
+                count++
+            } else {
+                alert("ถูกต้อง ค่าที่ถูกต้องคือ : "+target+ " คุณทายไปทั้งหมด : "+count+ " ครั้ง");
+            }
+    }
+
+    </script>
+</body>
+</html>
